@@ -1,0 +1,13 @@
+/* Hover grisáceo para los apartados de la lista */
+.meny li a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+.meny li a:hover, .meny li a:focus {
+  background-color: #f1f1f1;
+  color: inherit;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
