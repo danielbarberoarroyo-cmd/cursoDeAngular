@@ -16,11 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="DTOs\" />
     <Folder Include="Errors\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Middleware\" />
     <Folder Include="Services\" />
   </ItemGroup>
