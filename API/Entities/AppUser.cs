@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.SignalR;
 
 namespace API.Entities;
 

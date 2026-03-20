@@ -3,6 +3,7 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260319125117_MessageEntityAdded")]
+    partial class MessageEntityAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.3");
@@ -203,7 +206,7 @@ namespace API.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("API.Entities.Member", "Sender")
-                        .WithMany("MessagesSent")
+                        .WithMany("MessageSent")
                         .HasForeignKey("SenderId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -236,9 +239,9 @@ namespace API.Data.Migrations
 
                     b.Navigation("LikedMembers");
 
-                    b.Navigation("MessagesReceived");
+                    b.Navigation("MessageSent");
 
-                    b.Navigation("MessagesSent");
+                    b.Navigation("MessagesReceived");
 
                     b.Navigation("Photos");
                 });
